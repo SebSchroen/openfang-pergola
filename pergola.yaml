@@ -13,10 +13,15 @@ components:
     size: 10Gi
   ports:
   - 4200
+  - 3200
   ingresses:
   - host: dashboard
     path: /
     port: 4200
+    sticky: true
+  - host: signal_api
+    path: signal_api
+    port: 3200
     sticky: true
   files:
   - path: /data/.env
