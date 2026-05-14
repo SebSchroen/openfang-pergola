@@ -19,8 +19,8 @@ components:
     path: /
     port: 4200
     sticky: true
-  - host: signal_api
-    path: signal_api
+  - host: signal
+    path: signal
     port: 3200
     sticky: true
   files:
