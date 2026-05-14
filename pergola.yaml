@@ -51,6 +51,11 @@ components:
     value: json-rpc
   ports:
   - 8080
+  ingresses:
+  - host: api
+    path: /
+    port: 8080
+    sticky: true
   storage:
   - name: signal-cli-config
     path: /home/.local/share/signal-cli
