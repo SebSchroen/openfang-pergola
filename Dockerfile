@@ -10,11 +10,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     chromium \
     curl \
     ca-certificates \
-    openjdk-25-jre-headless \
     && rm -rf /var/lib/apt/lists/*
 
 RUN VERSION=$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/AsamK/signal-cli/releases/latest | sed -e 's/^.*\/v//') \
-    && curl -L -O https://github.com/AsamK/signal-cli/releases/download/v"${VERSION}"/signal-cli-"${VERSION}".tar.gz \
-    && tar xf signal-cli-"${VERSION}".tar.gz -C /opt \
+    && curl -L -O https://github.com/AsamK/signal-cli/releases/download/v"${VERSION}"/signal-cli-"${VERSION}"-Linux-native.tar.gz \
+    && tar xf signal-cli-"${VERSION}"-Linux-native.tar.gz -C /opt \
     && ln -sf /opt/signal-cli-"${VERSION}"/bin/signal-cli /usr/local/bin/ \
-    && rm signal-cli-"${VERSION}".tar.gz
+    && rm signal-cli-"${VERSION}"-Linux-native.tar.gz
