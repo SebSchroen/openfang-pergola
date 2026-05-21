@@ -6,7 +6,6 @@ components:
     file: Dockerfile
     platform: 
     - arch: amd64
-    - arch: arm64
   storage:
   - name: data
     path: /data
